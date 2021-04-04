@@ -1,4 +1,4 @@
-#최소 제곱법
+#최소 제곱법(method of least squares)
 # y = ax + b
 # a = (x - x 평균)*(y - y 평균)의 합 / (x- x평균)^2의 합
 # b = y의 평균 - (x의 평균 * 기울기 a)
