@@ -6,6 +6,7 @@
 # 이 값을 가장 작게 만들어 주는 a와 b 값을 찾아가는 작업이다.
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 # 기울기 a와 y절편 b
 fake_a_b = [3, 76]
@@ -14,6 +15,7 @@ fake_a_b = [3, 76]
 data = [[2, 81], [4,93], [6,91], [8,97]]
 x = [i[0] for i in data]
 y = [i[1] for i in data]
+
 
 #y = ax + b에 a와 b값을 대입하여 결과를 출력하는 함수
 def predict(x):
@@ -37,3 +39,10 @@ for i in range(len(x)):
     
 #최종 MSE 출력
 print("mse 최종값: " + str(mse_val(predict_result,y)))
+
+plt.scatter(x,y)
+plt.scatter(x,predict_result)
+#plt.plot([0,10], [75,105])
+plt.axis([0,10,75,105])
+plt.grid(True, axis='y')
+plt.show()
