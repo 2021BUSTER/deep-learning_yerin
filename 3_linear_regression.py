@@ -5,6 +5,7 @@
 # 정확한 예측 직선을 그려내는 과정
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 #x값과 y값
 x = [2,4,6,8]
@@ -38,3 +39,22 @@ b = my - (mx*a)
 #출력으로 확인
 print("기울기 a = ", a)
 print("y 절편 b = ", b)
+
+predict_result = []
+
+def predict(x):
+    return a*x + b
+
+for i in range(len(x)):
+    #predict_result 리스트를 완성
+    predict_result.append(predict(x[i]))
+    #print("공부할 시간 = %.f, 실제 점수 = %.f, 예측 점수 = %.f" % (x[i],y[i],predict(x[i])))
+    
+
+plt.scatter(x,y)
+#plt.scatter(x,predict_result)
+plt.plot(x, predict_result, color = 'orange')
+plt.axis([0,10,75,100])
+plt.grid(True, axis='y')
+plt.show()
+
