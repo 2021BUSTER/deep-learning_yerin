@@ -35,9 +35,15 @@ for i in range(2001):
             print("epoch = %.f, 기울기 = %.04f, 절편 = %.04f" % (i,a,b))
 
 # 앞서 구한 기울기와 절편을 이용해 그래프 그리기
-plt.scatter(x_data, y_data)
+plt.scatter(x_data, y_data, color = 'blue')
+plt.grid(True, axis = 'y')
 plt.xlim(0,15)
 plt.ylim(-.1,1.1)
 x_range = (np.arange(0,15,0.1))
-plt.plot(np.arange(0,15,0.1), np.array([sigmoid(a*x+b) for x in x_range]))
+b = -12.9513
+plt.plot(np.arange(0,15,0.1), np.array([sigmoid(a*x+b) for x in x_range]), 'r-')
+b = -16.5513
+plt.plot(np.arange(0,15,0.1),np.array([sigmoid(a*x+b) for x in x_range]), 'b--')
+b = -8.5513
+plt.plot(np.arange(0,15,0.1),np.array([sigmoid(a*x+b) for x in x_range]), 'g--')
 plt.show()
